@@ -1,6 +1,6 @@
+use crate::maple::Maple;
 use std::fmt::format;
 use std::fs;
-use crate::maple::Maple;
 
 struct Garden {
     location: String,
@@ -33,13 +33,13 @@ impl Garden {
 
 #[cfg(test)]
 mod tests {
-    use std::fs;
     use crate::garden::Garden;
+    use std::fs;
 
     #[test]
     fn write_read_maple() {
         let garden = Garden {
-            location: String::from("./")
+            location: String::from("./"),
         };
         let _ = garden.write_maple("Hello World!").unwrap();
         let content = garden.read_maple().unwrap();
